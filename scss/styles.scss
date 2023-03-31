@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(21, 132, 100);
+    header{
+        margin-top: 200px;
+        text-align: center;
+        h1{
+            color: white;
+            font-weight: bold;
+        }
+    }
+    main{
+        display: flex;
+        justify-content: center;
+        h3{
+            color: rgb(21, 132, 100);
+            background-color: white;
+            padding: 20px;
+            width: fit-content;
+        }
+    }
+}

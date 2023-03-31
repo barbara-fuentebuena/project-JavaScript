@@ -1,0 +1,16 @@
+body {
+  background-color: #158464; }
+  body header {
+    margin-top: 200px;
+    text-align: center; }
+    body header h1 {
+      color: white;
+      font-weight: bold; }
+  body main {
+    display: flex;
+    justify-content: center; }
+    body main h3 {
+      color: #158464;
+      background-color: white;
+      padding: 20px;
+      width: fit-content; }

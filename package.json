@@ -1,0 +1,13 @@
+{
+  "name": "class-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "built-css": "node-sass --include-path scss scss/styles.scss css/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run built-css\""
+  },
+  "author": "",
+  "license": "ISC"
+}
