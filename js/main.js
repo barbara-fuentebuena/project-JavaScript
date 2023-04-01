@@ -111,21 +111,21 @@ const start = function(){
     chooseActivityLevel();
     const calculate = () =>{
         if(gender = 161){
-            let resultTBM = confirm(`Your TBM is ${Math.round(calculatorFemale(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorFemale(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again? (YES or NO)`); 
+            let resultTBM = confirm(`Your TBM is ${Math.round(calculatorFemale(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorFemale(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again?`); 
             if(resultTBM == true){
                 start();
             }else{
                 alert(`See you next time!`);
             }
         }else if(gender = 5){
-            let resultTBM = confirm(`Your TBM is ${Math.round(calculatorMale(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorMale(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again? (YES or NO)`);
+            let resultTBM = confirm(`Your TBM is ${Math.round(calculatorMale(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorMale(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again?`);
             if(resultTBM == true){
                 start();
             }else{
                 alert(`See you next time!`);
             }
         }else if(gender = 80){
-            let resultTBM = confirm(`Your TBM is ${Math.round(calculatorOther(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorOther(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again? (YES or NO)`);
+            let resultTBM = confirm(`Your TBM is ${Math.round(calculatorOther(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorOther(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again?`);
             if(resultTBM == true){
                 start();
             }else{
