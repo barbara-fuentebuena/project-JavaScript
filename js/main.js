@@ -11,7 +11,7 @@ function Login(){
             alert(`Hi ${userName}, welcome to our calculator!`);
             start();
         }else if((selectPassword != repeatPassword) && (selectPassword != "")){
-            alert("Incorrect pasword. Try again.");
+            alert("Incorrect password. Try again.");
             password();
         }else if(selectPassword == ""){
             alert("You must enter a password to create your account. Try again.");
@@ -76,55 +76,52 @@ let height = "";
 const personalDetails = () =>{
     chooseAge = () =>{
         age = Number(prompt("Insert your age:"));
-        if(isNaN(age)){
-            (alert("You must insert a number."));
+        if((isNaN(age)) || ((age < 0))){
+            (alert("You must insert a positive number."));
             chooseAge();
         }else if(age < 18){
             (alert("You must to be over 18 years old to access to the calculator."));
             chooseAge();
         }
     }
-    chooseAge();
     chooseWeight = () =>{
         weight = Number(prompt("Insert your weight in kilos:"));
-        if(isNaN(weight)){
-            (alert("You must insert a number."));
+        if((isNaN(weight)) || (weight < 0)){
+            (alert("You must insert a positive number."));
             chooseWeight();
         }
     }
-    chooseWeight();
     chooseHeight = () =>{
         height = Number(prompt("Insert your height in centimentres:"));
-        if(isNaN(height)){
-            (alert("You must insert a number."));
+        if((isNaN(height)) || (height < 0)){
+            (alert("You must insert a positive number."));
             chooseHeight();
         }
     }
+    chooseAge()
+    chooseWeight()
     chooseHeight();
 }
 
 
 //main programm
 const start = function(){
-    chooseGender();
-    personalDetails();
-    chooseActivityLevel();
     const calculate = () =>{
-        if(gender = 161){
+        if(gender == 161){
             let resultTBM = confirm(`Your TBM is ${Math.round(calculatorFemale(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorFemale(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again?`); 
             if(resultTBM == true){
                 start();
             }else{
                 alert(`See you next time!`);
             }
-        }else if(gender = 5){
+        }else if(gender == 5){
             let resultTBM = confirm(`Your TBM is ${Math.round(calculatorMale(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorMale(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again?`);
             if(resultTBM == true){
                 start();
             }else{
                 alert(`See you next time!`);
             }
-        }else if(gender = 80){
+        }else if(gender == 80){
             let resultTBM = confirm(`Your TBM is ${Math.round(calculatorOther(age, weight, height, gender)+activityLevel)}. It means that you should consume ${Math.round(calculatorOther(age, weight, height, gender)+activityLevel)} calories as maximum per day if you want to lose weight.\n\nWould you like to calculate it again?`);
             if(resultTBM == true){
                 start();
@@ -136,6 +133,9 @@ const start = function(){
             start();
         }
     }
+    chooseGender();
+    personalDetails();
+    chooseActivityLevel();
     calculate();
 }
 
