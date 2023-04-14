@@ -147,6 +147,8 @@ const start = function(){
 
 //SECTION 3 RECIPES
 
+
+
 //functions to creat recipes:
 
 class Recipe{
@@ -184,7 +186,6 @@ const highProteinRecipes = [proteinCookies, greenPie];
 const lowFatRecipes = [wholeWheatPancakes, spinachBurgers];
 
 
-//function to offer a weekly recipe 
 
 const offerRecipe = function(){
     let weeklyRecipe = confirm("Would you like to check our recipes of the week?");
@@ -192,23 +193,38 @@ const offerRecipe = function(){
         const chooseCategory = () =>{
             let chosenCategory = prompt("Which category do you prefer?\n\n1) Low calories\n2) High protein\n3) Low Fat").toLocaleLowerCase();
             if((chosenCategory === "1") || (chosenCategory === "low calories" || (chosenCategory === "low calorie"))){
-                let resultRecipe = confirm(`Our weekly ${quinoaBurger.category} recipe for you is:\n\n${quinoaBurger.name} (${quinoaBurger.serving} servings)\n\nIngredients:\n${quinoaBurger.ingredients}\n\nTotal: ${quinoaBurger.calories} calories per serving.\n\nWould you like to chech another category?`);
+                let resultRecipe = confirm(`Our weekly ${lowCalorieRecipes[0].category} recipe for you is:\n\n${lowCalorieRecipes[0].name} (${lowCalorieRecipes[0].serving} servings)\n\nIngredients:\n${lowCalorieRecipes[0].ingredients}\n\nTotal: ${lowCalorieRecipes[0].calories} calories per serving.\n\nWould you like another Low Calorie recipe?`);
                 if(resultRecipe == true){
-                    chooseCategory();
+                    let anotherRecipe = confirm(`Another ${lowCalorieRecipes[1].category} recipe for you:\n\n${lowCalorieRecipes[1].name} (${lowCalorieRecipes[1].serving} servings)\n\nIngredients:\n${lowCalorieRecipes[1].ingredients}\n\nTotal: ${lowCalorieRecipes[1].calories} calories per serving.\n\nWould you like to check another category?`)
+                    if(anotherRecipe == true){
+                        chooseCategory()
+                    }else{
+                        alert(`See you next time ${userName}!`);
+                    }
                 }else{
                     alert(`See you next time ${userName}!`);
                 }
             }else if((chosenCategory === "2") || (chosenCategory === "high protein" || (chosenCategory === "high proteins"))){
-                let resultRecipe = confirm(`Our weekly ${proteinCookies.category} recipe for you is:\n\n${proteinCookies.name} (${proteinCookies.serving} servings)\n\nIngredients:\n${proteinCookies.ingredients}\n\nTotal: ${proteinCookies.calories} calories per serving.\n\nWould you like to check all the Low Calories recipes?`);
-                if((resultRecipe == true)){
+                let resultRecipe = confirm(`Our weekly ${highProteinRecipes[0].category} recipe for you is:\n\n${highProteinRecipes[0].name} (${highProteinRecipes[0].serving} servings)\n\nIngredients:\n${highProteinRecipes[0].ingredients}\n\nTotal: ${highProteinRecipes[0].calories} calories per serving.\n\nWould you like another High Protein recipe?`);
+                if(resultRecipe == true){
+                    let anotherRecipe = confirm(`Another ${highProteinRecipes[1].category} recipe for you:\n\n${highProteinRecipes[1].name} (${highProteinRecipes[1].serving} servings)\n\nIngredients:\n${highProteinRecipes[1].ingredients}\n\nTotal: ${highProteinRecipes[1].calories} calories per serving.\n\nWould you like to check another category?`)
+                    if(anotherRecipe == true){
                         chooseCategory()
+                    }else{
+                        alert(`See you next time ${userName}!`);
+                    }
                 }else{
                     alert(`See you next time ${userName}!`);
                 }
             }else if((chosenCategory === "3") || (chosenCategory === "low fat" || (chosenCategory === "low fats"))){
-                let resultRecipe = confirm(`Our weekly ${wholeWheatPancakes.category} recipe for you is:\n\n${wholeWheatPancakes.name} (${wholeWheatPancakes.serving} servings)\n\nIngredients:\n${wholeWheatPancakes.ingredients}\n\nTotal: ${wholeWheatPancakes.calories} calories per serving.\n\nWould you like to chech another category?`);
+                let resultRecipe = confirm(`Our weekly ${lowFatRecipes[0].category} recipe for you is:\n\n${lowFatRecipes[0].name} (${lowFatRecipes[0].serving} servings)\n\nIngredients:\n${lowFatRecipes[0].ingredients}\n\nTotal: ${lowFatRecipes[0].calories} calories per serving.\n\nWould you like another Low Fat recipe?`);
                 if(resultRecipe == true){
-                    chooseCategory();
+                    let anotherRecipe = confirm(`Another ${lowFatRecipes[1].category} recipe for you:\n\n${lowFatRecipes[1].name} (${lowFatRecipes[1].serving} servings)\n\nIngredients:\n${lowFatRecipes[1].ingredients}\n\nTotal: ${lowFatRecipes[1].calories} calories per serving.\n\nWould you like to check another category?`)
+                    if(anotherRecipe == true){
+                        chooseCategory()
+                    }else{
+                        alert(`See you next time ${userName}!`);
+                    }
                 }else{
                     alert(`See you next time ${userName}!`);
                 }
@@ -221,9 +237,7 @@ const offerRecipe = function(){
     }else{
         alert(`See you next time ${userName}!`);
     }
-    
 }
-
 
 
 Login();
@@ -254,7 +268,6 @@ const AZRecipes =  allRecipes.sort((element1, element2) =>{
 })
 console.log(`Alphabetically (A-Z) ordered recipes: `)
 console.log(AZRecipes)
-
 
 
 
