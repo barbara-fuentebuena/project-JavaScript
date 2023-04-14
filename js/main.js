@@ -168,15 +168,15 @@ class Recipe{
 
 const quinoaBurger = new Recipe("Quinoa Burger", "Low Calories", "20g breadcrumbs, 2 eggs, 130g onions, 100g carrots, 310g zuccini, 200g white quinoa", 92, 12, 3.9, 2);
 
-const appleCrumble = new Recipe ("Apple Crumble", "Low Calories", "20g cornflour, 3 eggs, 200g natural sweetener, 400g plain protein yoghurt, 4 apples", 93, 8, 7.8, 2)
+const appleCrumble = new Recipe ("Apple Crumble", "Low Calories", "20g cornflour, 3 eggs, 200g natural sweetener, 400g plain protein yoghurt, 4 apples", 93, 8, 7.8, 2);
 
 const proteinCookies = new Recipe ("Protein Cookies", "High Protein", "5ml vanilla essence, 1 entire egg, 1 egg white, 25g dark choco chips, 20g cornflour, 40g natural sweetner, 80g peanut butter, 1,5 scoops vanilla whey protein", 153, 6, 10.2, 9.3);
 
-const greenPie = new Recipe ("Green Pie", "High Protein", "2 zuccini, 120g cottage cheese (fat free), 100g mushrooms, 100g onion, 120g light cheese, 170g asparagus, 115g brocoli, 4 eggs", 429, 4, 21.6, 6.5)
+const greenPie = new Recipe ("Green Pie", "High Protein", "2 zuccini, 120g cottage cheese (fat free), 100g mushrooms, 100g onion, 120g light cheese, 170g asparagus, 115g brocoli, 4 eggs", 429, 4, 21.6, 6.5);
 
 const wholeWheatPancakes = new Recipe ("Whole Wheat Pancakes", "Low Fat", "75g whole wheat flour, 150ml almond milk", 74, 4, 2.7, 0.7);
 
-const spinachBurgers = new Recipe ("Spinach Burgers", "Low Fat", "1 egg, 100g cottage cheese, 1/2 capsicum, 100g carrots, 230g onion, 500g frozen spinach", 50, 10, 3.6, 1.2)
+const spinachBurgers = new Recipe ("Spinach Burgers", "Low Fat", "1 egg, 100g cottage cheese, 1/2 capsicum, 100g carrots, 230g onion, 500g frozen spinach", 50, 10, 3.6, 1.2);
 
 
 //array of recipes:
@@ -193,76 +193,76 @@ const offerRecipe = function(){
         const chooseCategory = () =>{
             let chosenCategory = prompt("Which category do you prefer?\n\n1) Low calories\n2) High protein\n3) Low Fat").toLocaleLowerCase();
             if((chosenCategory === "1") || (chosenCategory === "low calories" || (chosenCategory === "low calorie"))){
-                let askCalories = Number(prompt(`Which is the maximum of calories per serving you are looking for?`))
-                let condition = recipes.find((element)=>{return element.calories < askCalories})
-                if(!isNaN(askCalories)){
+                let askCalories = Number(prompt(`Which is the maximum of calories per serving you are looking for?`));
+                let condition = recipes.find((element)=>{return element.calories < askCalories});
+                if((!isNaN(askCalories)) && (askCalories > 0)){
                     if(condition){
-                        let getRecipe = confirm(`We have the perfect recipe for you: ${condition.name} (${condition.serving} servings)\n\nIngredients:\n${condition.ingredients}\n\nTotal ${condition.calories} calories per serving.\n\nWould you like to come back to the category menu?`)
+                        let getRecipe = confirm(`We have the perfect recipe for you: ${condition.name} (${condition.serving} servings)\n\nIngredients:\n${condition.ingredients}\n\nTotal ${condition.calories} calories per serving.\n\nWould you like to come back to the category menu?`);
                         if(getRecipe){
-                            chooseCategory()
+                            chooseCategory();
                         }else{
                             alert(`See you next time ${userName}!`);
                         }
                     }else{
-                        let sorry = confirm(`Sorry, we don't have any recipe that reaches your expectations. Would you like to try again?`)
+                        let sorry = confirm(`Sorry, we don't have any recipe that reaches your expectations. Would you like to try again?`);
                         if(sorry){
-                            chooseCategory()
+                            chooseCategory();
                         }
                         else{
                             alert(`See you next time ${userName}!`);
                         }
                     }
                 }else{
-                    alert(`Invalid entry. Try again.`)
-                    chooseCategory()
+                    alert(`Invalid Invalid entry. You must enter a positive number.`);
+                    chooseCategory();
                 }
             }else if((chosenCategory === "2") || (chosenCategory === "high protein" || (chosenCategory === "high proteins"))){
-                let askProtein = Number(prompt(`Which is the miminum of protein per serving you are looking for?`))
-                let condition = recipes.find((element)=>{return element.protein > askProtein})
-                if(!isNaN(askProtein)){
+                let askProtein = Number(prompt(`Which is the miminum of protein per serving you are looking for?`));
+                let condition = recipes.find((element)=>{return element.protein > askProtein});
+                if((!isNaN(askProtein)) && (askProtein > 0)){
                     if(condition){
-                        let getRecipe = confirm(`We have the perfect recipe for you: ${condition.name} (${condition.serving} servings)\n\nIngredients:\n${condition.ingredients}\n\nTotal ${condition.protein} protein per serving.\n\nWould you like to come back to the category menu?`)
+                        let getRecipe = confirm(`We have the perfect recipe for you: ${condition.name} (${condition.serving} servings)\n\nIngredients:\n${condition.ingredients}\n\nTotal ${condition.protein} protein per serving.\n\nWould you like to come back to the category menu?`);
                         if(getRecipe){
-                            chooseCategory()
+                            chooseCategory();
                         }else{
                             alert(`See you next time ${userName}!`);
                         }
                     }else{
-                        let sorry = confirm(`Sorry, we don't have any recipe that reaches your expectations. Would you like to try again?`)
+                        let sorry = confirm(`Sorry, we don't have any recipe that reaches your expectations. Would you like to try again?`);
                         if(sorry){
-                            chooseCategory()
+                            chooseCategory();
                         }
                         else{
                             alert(`See you next time ${userName}!`);
                         }
                     }
                 }else{
-                    alert(`Invalid entry. Try again.`)
-                    chooseCategory()
+                    alert(`Invalid entry. You must enter a positive number.`);
+                    chooseCategory();
                 }
             }else if((chosenCategory === "3") || (chosenCategory === "low fat" || (chosenCategory === "low fats"))){
-                let askFats = Number(prompt(`Which is the maximum of fats per serving you are looking for?`))
-                let condition = recipes.find((element)=>{return element.fats < askFats})
-                if(!isNaN(askFats)){
+                let askFats = Number(prompt(`Which is the maximum of fats per serving you are looking for?`));
+                let condition = recipes.find((element)=>{return element.fats < askFats});
+                if((!isNaN(askFats)) && (askFats > 0)){
                     if(condition){
-                        let getRecipe = confirm(`We have the perfect recipe for you: ${condition.name} (${condition.serving} servings)\n\nIngredients:\n${condition.ingredients}\n\nTotal ${condition.fats} fats per serving.\n\nWould you like to come back to the category menu?`)
+                        let getRecipe = confirm(`We have the perfect recipe for you: ${condition.name} (${condition.serving} servings)\n\nIngredients:\n${condition.ingredients}\n\nTotal ${condition.fats} fats per serving.\n\nWould you like to come back to the category menu?`);
                         if(getRecipe){
-                            chooseCategory()
+                            chooseCategory();
                         }else{
                             alert(`See you next time ${userName}!`);
                         }
                     }else{
-                        let sorry = confirm(`Sorry, we don't have any recipe that reaches your expectations. Would you like to try again?`)
+                        let sorry = confirm(`Sorry, we don't have any recipe that reaches your expectations. Would you like to try again?`);
                         if(sorry){
-                            chooseCategory()
+                            chooseCategory();
                         }
                         else{
                             alert(`See you next time ${userName}!`);
                         }
                     }
                 }else{
-                    alert(`Invalid entry. Try again.`)
-                    chooseCategory()
+                    alert(`Invalid entry. You must enter a positive number.`);
+                    chooseCategory();
                 }
             }else{
                 alert(`Invalid entry. Try again.`);
