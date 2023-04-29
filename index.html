@@ -4,16 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primera entrega JavaScript</title>
+    <title>Tercera entrega JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>WELCOME TO OUR CALORIE DEFICIT BLOG</h1>
-    </header>
-    <main>
-        <h3>Sign up <span><a href="">here</a></span> and calculate your calorie deficit!</h3>
+    <main class="mainContainer">
+        <div class="titleContainer">
+            <h3>Calorie deficit calculator</h3>
+            <p>Calculate the necessary calories you should eat to lose weight.</p>
+        </div>
+        <div class="inputsContainer">
+            <div class="nameContainer">
+                <label for="email">Insert your email:</label>
+                <input class="emailInput" type="email" id="emailUser" placeholder="email@example.com" name="email">
+            </div>
+            <div class="calculatorContainer">
+                <div>
+                    <label for="">Gender</label>
+                    <select name="" id="genderInput"> 
+                        <option value="none">Select</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Age</label>
+                    <input type="text" id="ageInput" placeholder="Insert your age">
+                </div>
+                <div>
+                    <label for="">Height</label>
+                    <input type="text" id="heightInput" placeholder="Insert height in cms">
+                </div>
+                <div>
+                    <label for="">Weight</label>
+                    <input type="text" id="weightInput" placeholder="Insert weight in kgs">
+                </div>
+                <div>
+                    <label for="">Activity level</label>
+                    <select name="" id="activityLevelInput" required>
+                        <option value="none">Select</option>
+                        <option value="1">Very Active</option>
+                        <option value="2">Active</option>
+                        <option value="3">Semi active</option>
+                        <option value="4">Not active</option>
+                    </select>
+                </div>   
+            </div>
+        </div>
     </main>
+    <section>
+        <button class="buttonCalculate" id="calculateButton">CALCULATE</button>
+    </section>
+    <section>
+        <div>
+            <div id="errorMessage"></div>
+            <div id="resultTotal">
+        </div>
+    </section>
+    <section>
+        <a href="./index.html" id="resetButton"></a>
+    </section>
     <script src="./js/main.js"></script>
 </body>
 </html>
